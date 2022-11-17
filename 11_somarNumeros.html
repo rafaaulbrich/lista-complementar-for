@@ -12,21 +12,22 @@
 
     //PROCESSAMENTO
 
-    let soma = 0;
+    let somaPares = 0;
+    let somaImpares = 0;
 
     for(contador = 0; contador <= 100; contador++) {
         if(contador % 2 === 0) {
             listaPares.push(contador);
-            soma = soma + contador;
+            somaPares = somaPares + contador;
         } else {
             listaImpares.push(contador);
-            soma = soma + contador;
+            somaImpares = somaImpares + contador;
         }
     }
 
     //SAÍDA 
 
-    document.write(`a soma dos numeros pares resulta em: ${soma}</br>`);
-    document.write(`a soma dos numeros impares resulta em: ${soma}`);
+    document.write(`a soma dos numeros pares resulta em: ${somaPares}</br>`);
+    document.write(`a soma dos numeros impares resulta em: ${somaImpares}`);
     
 </script>

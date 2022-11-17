@@ -1,3 +1,4 @@
+<meta charset="UTF-8">
 <script>
     //PROBLEMA
     /*
@@ -18,17 +19,18 @@
     //PROCESSAMENTO
 
     let numerosPares = [];
+    let somaPares = 0;
 
-    for(contador = 1; limiteInferior <= limiteSuperior; contador++) {
-        let limite = limiteSuperior - limiteInferior;
-        if(limite % 2 === 0) {
+    for (let contador = limiteInferior; contador <= limiteSuperior; contador++) {
+        if (contador % 2 === 0) {
             numerosPares.push(contador);
+            somaPares = somaPares + contador;
         }
     }
-    
+
     //SAÍDA
 
-    document.write(`os números pares que estão no intervalo de ${limiteInferior} até ${limiteSuperior} são: ${numerosPares}</br>`);
-    document.write(`a soma desses números pares resulta em `);
+    document.write(`os números pares que estão no intervalo de ${limiteInferior} até ${limiteSuperior} são: ${numerosPares.join(", ")}</br>`);
+    document.write(`a soma desses números pares resulta em ${somaPares}`);
 
 </script>

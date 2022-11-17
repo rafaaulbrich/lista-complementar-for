@@ -1,3 +1,4 @@
+<meta charset="UTF-8">
 <script>
     //PROBLEMA
     /*
@@ -9,10 +10,25 @@
 
     //ENTRADA
 
+    let notasProgramacaoI = [4, 3, 5, 10, 9, 2, 7, 10, 8, 7, 6, 1, 5, 2, 3];
 
     //PROCESSAMENTO
 
+    let soma = 0;
+
+    for(let media of notasProgramacaoI) {
+        soma = soma + media;
+    }
+
+    let mediaDasMedias = soma / notasProgramacaoI.length;
+
+    let maiorMedia = notasProgramacaoI.sort((a,b) => b-a)[0];
+    let menorMedia = notasProgramacaoI.sort((a,b) => a-b)[0];
 
     //SAÍDA
+
+    document.write(`a média das médias é ${mediaDasMedias.toFixed(2)}</br>`);
+    document.write(`a maior média é ${maiorMedia}</br>`);
+    document.write(`a menor média é ${menorMedia}`);
     
 </script>

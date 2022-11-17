@@ -10,35 +10,37 @@
 
     //ENTRADA
 
-    let idadeMulheres = [];
-    let idadeHomens = [];
+    let idadeMulheres = 0;
+    let qntMulheres = 0;
+    let idadeHomens = 0;
+    let qntHomens = 0;
 
     //PROCESSAMENTO
 
     let idade = 0;
-    let soma = 0;
+    let somaIdades = 0;
 
-    for(contador = 1; contador <= 10; contador++) {
-        idade = Number(prompt(`informe a idade da pessoa ${contador}`));
+    for (contador = 1; contador <= 10; contador++) {
+        idade = parseInt(prompt(`informe a idade da pessoa ${contador}:`));
         let genero = prompt(`o genero da pessoa ${contador} é F-Feminino ou M-Masculino?`).toUpperCase().trim();
-        soma = soma + 1;
-        if(genero === "F") {
-            idadeMulheres.push(idade);
+        somaIdades = somaIdades + idade;
+        if (genero === "F") {
+            idadeMulheres = idadeMulheres + idade;
+            qntMulheres++;
         } else {
-            idadeHomens.push(idade);
+            idadeHomens = idadeHomens + idade;
+            qntHomens++;
         }
     }
 
-    let somaIdades = soma + idade;
+    let mediaIdades = somaIdades / 10;
+    let mediaMulheres = idadeMulheres / qntMulheres;
+    let mediaHomens = idadeHomens / qntHomens;
 
-    let mediaIdades = somaIdades / somaIdades.length;
-    let mediaMulheres = soma / idadeMulheres.length;
-    let mediaHomens = soma / idadeHomens.length;
-    
     //SAÍDA
 
-    document.write(`a média das idades é de ${mediaIdades.toFixed()} anos.</br>`);
-    document.write(`a média da idade de mulheres é de ${mediaMulheres.toFixed()} anos.</br>`);
-    document.write(`a média da idade de homens é de ${mediaHomens.toFixed()} anos.`);
+    document.write(`a média das idades é de ${mediaIdades.toFixed(1)} anos.</br>`);
+    document.write(`a média da idade de mulheres é de ${mediaMulheres.toFixed(1)} anos.</br>`);
+    document.write(`a média da idade de homens é de ${mediaHomens.toFixed(1)} anos.`);
 
 </script>

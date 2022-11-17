@@ -7,10 +7,21 @@
 
     //ENTRADA
 
+    let lista100a200 = [];
 
     //PROCESSAMENTO
 
+    for(contador = 1; contador <= 10; contador++) {
+        const numeros = Number(prompt("informe um número"));
+        if(numeros >= 100 && numeros <= 200) {
+            lista100a200.push(numeros);
+        }
+    }
     
     //SAÍDA
+
+    let percentagemLista = lista100a200.length / 10 * 100;
+
+    document.write(`a quantidade de números que estão entre 100 e 200 é de ${lista100a200.length}, com ${percentagemLista.toFixed(2)}% dos números`);
 
 </script>

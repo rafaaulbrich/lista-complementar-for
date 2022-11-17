@@ -12,8 +12,32 @@
 
     //ENTRADA
 
+    const qntPessoas = parseInt(prompt("quantas pessoas assisitiram o filme?"));
+
     //PROCESSAMENTO
 
+    let avaliacaoR = 0;
+    let somaRegular = 0;
+    let avaliacaoB = 0;
+    let somaBom = 0;
+
+    let somaIdades = 0;
+
+    for(contador = 1; contador <= qntPessoas; contador++) {
+        const idade = parseInt(prompt("qual a sua idade?"));
+        const avaliacao = prompt("qual a sua avaliação sobre o filme, sendo R-Regular ou B-Bom").toUpperCase().trim();
+        somaIdades = somaIdades + idade;
+        if(avaliacao === "R") {
+            avaliacaoR = avaliacaoR + avaliacao;
+            somaRegular++;
+        } else {
+            avaliacaoB = avaliacaoB + avaliacao;
+            somaBom++;
+        }
+    }
+
+    let idadeMediaRegular = avaliacaoR / somaRegular;
+    let 
     
     //SAÍDA
 
