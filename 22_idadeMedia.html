@@ -1,0 +1,44 @@
+<script>
+    //PROBLEMA
+    /*
+    Desenvolva um programa que receba o sexo e a idade de 10 pessoas.
+    Calcule e apresente:
+    - A média das idades das 10 pessoas
+    - A idade média das mulheres
+    - A idade média dos homens
+    */
+
+    //ENTRADA
+
+    let idadeMulheres = [];
+    let idadeHomens = [];
+
+    //PROCESSAMENTO
+
+    let idade = 0;
+    let soma = 0;
+
+    for(contador = 1; contador <= 10; contador++) {
+        idade = Number(prompt(`informe a idade da pessoa ${contador}`));
+        let genero = prompt(`o genero da pessoa ${contador} é F-Feminino ou M-Masculino?`).toUpperCase().trim();
+        soma = soma + 1;
+        if(genero === "F") {
+            idadeMulheres.push(idade);
+        } else {
+            idadeHomens.push(idade);
+        }
+    }
+
+    let somaIdades = soma + idade;
+
+    let mediaIdades = somaIdades / somaIdades.length;
+    let mediaMulheres = soma / idadeMulheres.length;
+    let mediaHomens = soma / idadeHomens.length;
+    
+    //SAÍDA
+
+    document.write(`a média das idades é de ${mediaIdades.toFixed()} anos.</br>`);
+    document.write(`a média da idade de mulheres é de ${mediaMulheres.toFixed()} anos.</br>`);
+    document.write(`a média da idade de homens é de ${mediaHomens.toFixed()} anos.`);
+
+</script>

@@ -1,0 +1,46 @@
+<script>
+    //PROBLEMA
+    /*
+    Pergunte ao usuário quantos filmes deseja cadastrar.
+    Considere que os gêneros dos filmes que serão cadastrados serão Comédia, Drama e Romance.
+    Para cada filme que o usuário inserir, pergunte o gênero do filme e o adicione na lista correspondente.
+    Apresente os gêneros e os seus respectivos filmes, que foram informados pelo usuário.
+    ***Não apresente listas que não tiveram filme cadastrado.
+    */
+
+    //ENTRADA
+
+    const quantFilmes = parseInt(prompt("quantos filmes você deseja cadastrar?"));
+    let comedia = [];
+    let drama = [];
+    let romance = [];
+
+    //PROCESSAMENTO
+
+    for (contador = 1; contador <= quantFilmes; contador++) {
+        let filmes = prompt("digite o filme que você deseja cadastrar")
+        let genero = prompt("o filme que você deseja cadastrar é de que genêro? C-comédia; D-drama; R-romance").toUpperCase();
+
+        if (genero === "C") {
+            comedia.push(filmes);
+        } else if (genero === "D") {
+            drama.push(filmes);
+        } else if (genero === "R") {
+            romance.push(filmes);
+        }
+    }
+
+    //SAÍDA
+
+    if (comedia.length > 0) {
+        document.write(`Filmes de comédia: ${comedia.join(", ")}</br>`);
+    }
+    if (drama.length > 0) {
+        document.write(`Filmes de drama: ${drama.join(", ")}</br>`);
+    }
+    if (romance.length > 0) {
+        document.write(`Filmes de romance: ${romance.join(", ")}</br>`);
+    }
+
+
+</script>

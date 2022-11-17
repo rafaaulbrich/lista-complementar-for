@@ -1,0 +1,53 @@
+<script>
+    //PROBLEMA
+    /*
+    Considere que, após o censo do IBGE, feito em uma rua da cidade, os seguintes dados foram coletados:
+    let salarios = [1200, 2500, 3000, 9000, 850, 4000, 1500, 2300, 3800, 1600];
+    let numeroDeFilhos = [1, 2, 2, 1, 3, 2, 3, 3, 0, 4];
+    Agora, deseja-se saber os seguintes dados sobre os moradores da rua:
+    - Média de salário das famílias ali residentes
+    - Média do número de filhos
+    - Maior salário
+    - Percentual de famílias com salário até R$ 3.000,00
+    */
+
+    //ENTRADA
+
+    let salarios = [1200, 2500, 3000, 9000, 850, 4000, 1500, 2300, 3800, 1600];
+    let numeroDeFilhos = [1, 2, 2, 1, 3, 2, 3, 3, 0, 4];
+
+    //PROCESSAMENTO
+
+    let totalSalarios = 0;
+    let mediaSalarios = 0;
+    let totalFilhos = 0;
+    let mediaFilhos = 0;
+    let maiorSalario = 0;
+    let salariosAte3000 = 0;
+
+    for(let salario of salarios) {
+        totalSalarios = totalSalarios + salario;
+        if(salario <= 3000) {
+            salariosAte3000++;
+        }
+    }
+
+    mediaSalarios = totalSalarios / salarios.length;
+    maiorSalario = salarios.sort((a, b) => b-a)[0];
+
+    let percentualAte3000 = salariosAte3000 / salarios.length * 100;
+    
+    for(let filhos of numeroDeFilhos) {
+        totalFilhos = totalFilhos + filhos;
+    }
+
+    mediaFilhos = totalFilhos / numeroDeFilhos.length;
+
+    //SAÍDA
+
+    document.write(`média de salário: R$ ${mediaSalarios.toFixed(2)}</br>`);
+    document.write(`maior salário: R$ ${maiorSalario.toFixed(2)}</br>`);
+    document.write(`famílias com salário até R$ 3.000,00: ${percentualAte3000.toFixed(2)}% </br>`);
+    document.write(`média do número de filhos: ${mediaFilhos.toFixed(2)}`);
+
+</script>

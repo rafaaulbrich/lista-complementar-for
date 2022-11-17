@@ -1,0 +1,50 @@
+<script>
+    //PROBLEMA
+    /*
+    Desenvolva um programa que receba a idade de 10 pessoas. Após, calcule e mostre:
+    - A quantidade de pessoas em cada faixa etária
+    - A percentagem de pessoas em cada faixa etária
+
+    Faixas etárias:
+    1ª: Até 15 anos
+    2ª: De 16 a 30 anos
+    3ª: De 31 a 45 anos
+    4ª: De 46 a 60 anos
+    5ª: Acima de 61 anos
+    */
+
+    //ENTRADA
+
+    let pessoas00_15 = [];
+    let pessoas16_30 = [];
+    let pessoas31_45 = [];
+    let pessoas46_60 = [];
+    let pessoas61_999 = [];
+
+    //PROCESSAMENTO
+
+    for(let contador = 1; contador <= 10; contador++) {
+        let idade = Number(prompt(`digite a idade da pessoa ${contador}:`));
+        if(idade <= 15) {
+            pessoas00_15.push(idade);
+        } else if (idade <= 30) {
+            pessoas16_30.push(idade);
+        } else if(idade <= 45) {
+            pessoas31_45.push(idade);
+        } else if(idade <= 60) {
+            pessoas46_60.push(idade);
+        } else {
+            pessoas61_999.push(idade);
+        }
+    }
+    
+    //SAÍDA
+
+    let percentualAte15  = pessoas00_15.length / 10 * 100;
+    document.write(`${pessoas00_15.length} possuem até 15 anos (${percentualAte15}%)</br>`);
+    document.write(`${pessoas16_30.length} possuem entre 16 e 30 anos (${pessoas16_30.length / 10 * 100}%)</br>`);
+    document.write(`${pessoas31_45.length} possuem entre 31 e 45 anos (${pessoas31_45.length / 10 * 100}%)</br>`);
+    document.write(`${pessoas46_60.length} possuem entre 46 e 60 anos (${pessoas46_60.length / 10 * 100}%)</br>`);
+    document.write(`${pessoas61_999.length} possuem acima de 61 anos (${pessoas61_999.length / 10 * 100}%)</br>`);
+
+</script>

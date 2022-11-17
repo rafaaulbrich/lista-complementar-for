@@ -1,0 +1,29 @@
+<script>
+    //PROBLEMA
+    /*
+    Faça um algoritmo que pergunte ao usuário quantos números primos deseja descobrir.
+    Desenvolva um programa que identifique a quantidade de números primos desejada pelo usuário.
+    Apresente a lista de números primos na tela.
+    */
+
+    //ENTRADA
+
+    const quantNumerosPrimos = Number(prompt("quantos números primos você deseja descobrir?"));
+
+    //PROCESSAMENTO
+
+    let divisivel = 0;
+
+    for(contador = 1; contador <= quantNumerosPrimos; contador++) {
+        if(quantNumerosPrimos % contador === 0) {
+            divisivel = divisivel + 1;
+        }
+    }
+
+    if (divisivel === 2) {
+        document.write(`os números primos são: ${divisivel}`);
+    } 
+    
+    //SAÍDA
+
+</script>

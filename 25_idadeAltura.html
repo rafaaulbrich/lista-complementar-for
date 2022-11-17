@@ -1,0 +1,39 @@
+<script>
+    //PROBLEMA
+    /*
+    Desenvolva um programa que receba a idade de 10 pessoas, e também o seu peso.
+    Calcule e apresente os seguintes dados:
+    - Média do peso das pessoas que possuem mais de 50 anos
+    - Média do peso das pessoas que possuem menos de 25 anos
+    - Média do peso de todas as pessoas
+    */
+
+    //ENTRADA
+
+    let pesoMais50 = [];
+    let pesoMenos25 = [];
+    let mediaPesoTotal = 0;
+
+    //PROCESSAMENTO
+
+    for(contador = 1; contador <= 10; contador++) {
+        const idade = Number(prompt("informe sua idade"));
+        const peso = Number(prompt("informe seu peso"));
+        if(idade >= 50) {
+            pesoMais50.push(contador);
+        } else if(idade <= 25) {
+            pesoMenos25.push(contador);
+        }
+    }
+
+    let mediaPesoMais50 = pesoMais50.length / 10 * 100;
+    let mediaPesoMenos25 = pesoMenos25.length / 10 * 100;
+    mediaPesoTotal = (pesoMais50.length + pesoMenos25.length) / 10 * 100;
+    
+    //SAÍDA
+
+    document.write(`a média de peso das pessoas que possuem mais de 50 anos é de ${mediaPesoMais50.toFixed(2)} quilos</br>`);
+    document.write(`a média de peso das pessoas que possuem menos de 25 anos é de ${mediaPesoMenos25.toFixed(2)} quilos</br>`);
+    document.write(`a média de peso de todas as pessoas é de ${mediaPesoTotal.toFixed(2)} quilos`);
+
+</script>

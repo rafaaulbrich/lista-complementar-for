@@ -1,0 +1,40 @@
+<script>
+    //PROBLEMA
+    /*
+    Considere que uma loja utiliza o identificador V para transações à vista e P para transações parceladas.
+    Faça um programa que receba os valores de 10 transações realizadas, separando em listas as transações parceladas e transações à vista.
+    Apresente, ao fim do programa, os seguintes dados:
+    - Total de compras à vista
+    - Total de compras parceladas
+    - Total das compras efetuadas
+    - O valor da primeira prestação das compras a prazo, considerando que serão pagas em três vezes.
+    */
+
+    //ENTRADA
+
+    let comprasParceladas = 0;
+    let quantComprasParceladas = 0;
+    let comprasAVista = 0;
+    let quantComprasAVista = 0;
+
+    //PROCESSAMENTO
+
+    for(let contador = 1; contador <= 10; contador++) {
+        const tipoPagamento = prompt(`compra realizada V-A Vista ou P-Parcelada?`).trim().toUpperCase();
+        if(tipoPagamento === "V") {
+            comprasAVista = comprasAVista + Number(prompt(`qual o valor da compra?`));
+            quantComprasAVista++;
+        } else {
+            comprasParceladas = comprasParceladas + Number(prompt(`qual o valor da compra?`));
+            quantComprasParceladas++;
+        }
+    }
+    
+    //SAÍDA
+
+    document.write(`o total de compras a vista é de R$ ${comprasAVista.toFixed(2)}</br>`);
+    document.write(`o total de compras parceladas é de R$ ${comprasParceladas.toFixed(2)}</br>`);
+    document.write(`o total de compras efetuadas é de R$ ${(comprasAVista + comprasParceladas).toFixed(2)}</br>`);
+    document.write(`a primeira prestação das compras parceladas é de R$ ${(comprasParceladas / 3).toFixed(2)}`);
+
+</script>

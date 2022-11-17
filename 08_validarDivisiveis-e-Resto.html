@@ -1,0 +1,26 @@
+<script>
+    //PROBLEMA
+    /*
+    Desenvolva um programa que gere números entre 1000 e 1999, demonstrando os números que, divididos por 11, dão resto 5.
+    */
+
+    //ENTRADA
+
+    let listaDeNumeros = [];
+    let demaisNumeros = [];
+
+    //PROCESSAMENTO
+
+    for(let contador = 1000; contador <= 1999; contador++) {
+        if(contador % 11 === 5) {
+            listaDeNumeros.push(contador);
+        } else{
+            demaisNumeros.push(contador);
+        }
+    }
+    
+    //SAÍDA
+
+    document.write(`${listaDeNumeros.join(", ")}`);
+    
+</script>
