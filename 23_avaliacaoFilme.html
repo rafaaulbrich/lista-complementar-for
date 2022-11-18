@@ -16,10 +16,10 @@
 
     //PROCESSAMENTO
 
-    let avaliacaoR = 0;
-    let somaRegular = 0;
-    let avaliacaoB = 0;
-    let somaBom = 0;
+    let avaliacaoR = [];
+    let somaIdadeRegular = 0;
+    let avaliacaoB = [];
+    let somaIdadeBom = 0;
 
     let somaIdades = 0;
 
@@ -28,17 +28,27 @@
         const avaliacao = prompt("qual a sua avaliação sobre o filme, sendo R-Regular ou B-Bom").toUpperCase().trim();
         somaIdades = somaIdades + idade;
         if(avaliacao === "R") {
-            avaliacaoR = avaliacaoR + avaliacao;
-            somaRegular++;
+            avaliacaoR.push(avaliacao);
+            somaIdadeRegular = somaIdadeRegular + idade;
         } else {
-            avaliacaoB = avaliacaoB + avaliacao;
-            somaBom++;
+            avaliacaoB.push(avaliacao);
+            somaIdadeBom = somaIdadeBom + idade;
         }
     }
 
-    let idadeMediaRegular = avaliacaoR / somaRegular;
-    let 
+    let idadeMediaRegular = somaIdadeRegular / avaliacaoR.length;
+    let idadeMediaBom = somaIdadeBom / avaliacaoB.length ;
+    let mediaTotal = somaIdades / qntPessoas;
+
+    let percentRegular = avaliacaoR.length / 10 * 100;
+    let percentBom = avaliacaoB.length / 10 * 100;
     
     //SAÍDA
+
+    document.write(`a média da idade de pessoas que responderam que o filme era regular é de ${idadeMediaRegular.toFixed(1)} anos</br>`);
+    document.write(`a média da idade de pessoas que responderam que o filme era bom é de ${idadeMediaBom.tofixed(1)} anos</br>`);
+    document.write(`a média da idade de todas as pessoas que assistiram o filme é de ${mediaTotal.toFixed(1)} anos</br>`);
+    document.write(`o percentual de pessoas que classificaram o filme como regular é de ${percentRegular.toFixed(1)}%</br>`);
+    document.write(`o percentual de pessoas que classificaram o filme como bom é de ${percentBom.toFixed(1)}%</br>`);
 
 </script>

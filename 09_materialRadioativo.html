@@ -1,3 +1,4 @@
+<meta charset="UTF-8">
 <script>
     //PROBLEMA
     /*
@@ -8,11 +9,21 @@
 
     //ENTRADA
 
-    const massaInicial = Number(prompt("informe a massa inicial do material radioativo"));
+    let pesoMaterial = Number(prompt("informe o peso do material radioativo(em gramas):").replace(",", "."));
 
     //PROCESSAMENTO
 
+    let minutos = 0;
+
+    for(minutos = 1; 1 < pesoMaterial; minutos++) {
+        pesoMaterial = pesoMaterial / 2;
+    }
     
     //SAÍDA
+
+    let horas = Math.floor(minutos / 60);
+    minutos = minutos - (horas * 60);
+
+    document.write(`serão necessários ${horas} horas e ${minutos} minutos para que o peso do material diminua de 1 grama!`);
     
 </script>
