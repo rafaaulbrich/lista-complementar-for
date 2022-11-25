@@ -9,19 +9,38 @@
 
     //ENTRADA
 
-    let conta = 0;
+    let valorInvestido = 0;
+    let rendimento = 0;
+    let montante24meses = 0;
+    let rendimento24meses = 0;
+    let montante48meses = 0;
+    let rendimento48meses = 0;
+    let montante96meses = 0;
+    let rendimento96meses = 0;
 
     //PROCESSAMENTO
 
-    for(contador = 0; conta < 100; contador++) {
-        conta = conta + 100;
-        conta = conta + (conta * 0.018);
-    }
+    for(let mes = 1; mes <= 96; mes++) {
+        valorInvestido = valorInvestido + 100;
+        valorInvestido = valorInvestido * 1.018;
+        if(mes === 24) {
+            montante24meses = valorInvestido;
+            rendimento24meses = valorInvestido - 2400;
+        }
+        if(mes === 48) {
+            montante48meses = valorInvestido;
+            rendimento48meses = valorInvestido - 4800 - rendimento24meses;
+        }
+        if(mes === 96) {
+            montante96meses = valorInvestido;
+            rendimento96meses = valorInvestido - 9600 - rendimento24meses - rendimento48meses;
+        }
+    } 
     
     //SAÍDA
 
-    document.write(`o valor investido depois de 24 meses ficará em R$ ${(conta * 24).toFixed(2)} reias</br>`);
-    document.write(`o valor investido depois de 48 meses ficará em R$ ${(conta * 48).toFixed(2)} reias</br>`);
-    document.write(`o valor investido depois de 96 meses ficará em R$ ${(conta * 96).toFixed(2)} reias</br>`);
+    document.write(`o valor investido depois de 24 meses ficará em R$${rendimento24meses.toFixed(2)} reias e seu rendimento durante esse período foi de R$${montante24meses.to(2)} reais</br>`);
+    document.write(`o valor investido depois de 48 meses ficará em R$${rendimento48meses.toFixed(2)} reias e seu rendimento durante esse período foi de R$${montante48meses.to(2)} reais</br>`);
+    document.write(`o valor investido depois de 96 meses ficará em R$${rendimento96meses.toFixed(2)} reias e seu rendimento durante esse período foi de R$${montante96meses.to(2)} reais</br>`);
     
 </script>

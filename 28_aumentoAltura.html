@@ -10,13 +10,17 @@
 
     //PROCESSAMENTO
 
-    let joaozinho = 1.50;
-    let crescimentoAnualJoao = 2;
-    let zezinho = 1.30;
-    let crescimentoAnualZe = 3;
+    let joaozinho = 1.5;
+    let zezinho = 1.3;
 
-
+    let anos = 1;
+    for(anos = 1; zezinho <= joaozinho; anos++) {
+        zezinho = zezinho + 0.03;
+        joaozinho = joaozinho + 0.02;
+    }
     
     //SAÍDA
+
+    document.write(`a altura de zezinho ultrapassará a altura de joãozinho em ${anos} anos.`);
 
 </script>
